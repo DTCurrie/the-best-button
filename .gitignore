@@ -1,0 +1,12 @@
+# Output
+api/dist/
+client/dist/
+
+# Dependency directories
+api/node_modules/
+client/node_modules
+
+# Logs
+api/logs
+api/*.log
+api/npm-debug.log*

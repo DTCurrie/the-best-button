@@ -1,0 +1,68 @@
+{
+  "name": "the-best-button-client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=development webpack-dev-server --hot --config webpack.dev.js",
+    "build": "NODE_ENV=production webpack --config webpack.prod.js",
+    "lint": "tslint -p tsconfig.json -c tslint.json",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/polyfill": "^7.2.5",
+    "@material/button": "^0.44.0",
+    "@material/layout-grid": "^0.41.0",
+    "@material/typography": "^0.44.0",
+    "react": "^16.8.2",
+    "react-dom": "^16.8.2",
+    "socket.io-client": "^2.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.3.3",
+    "@babel/plugin-proposal-class-properties": "^7.3.3",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-typescript": "^7.3.3",
+    "@types/node": "^11.9.4",
+    "@types/react": "^16.8.3",
+    "@types/react-dom": "^16.8.2",
+    "@types/socket.io-client": "^1.4.32",
+    "autoprefixer": "^9.4.7",
+    "babel-loader": "^8.0.5",
+    "clean-webpack-plugin": "^1.0.1",
+    "compression-webpack-plugin": "^2.0.0",
+    "css-loader": "^2.1.0",
+    "cssnano": "^4.1.10",
+    "fork-ts-checker-webpack-plugin": "^0.5.2",
+    "gh-pages": "^2.0.1",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.5.0",
+    "node-sass": "^4.11.0",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.5.0",
+    "react-hot-loader": "^4.6.5",
+    "sass-loader": "^7.1.0",
+    "source-map-loader": "^0.2.4",
+    "style-loader": "^0.23.1",
+    "tslint": "^5.12.1",
+    "tslint-loader": "^3.5.4",
+    "tslint-react": "^3.6.0",
+    "typescript": "^3.3.3",
+    "webpack": "^4.29.4",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.1.14",
+    "webpack-merge": "^4.2.1"
+  },
+  "postcss": {
+    "map": false,
+    "plugins": {
+      "postcss-preset-env": {},
+      "autoprefixer": {},
+      "cssnano": {}
+    }
+  }
+}

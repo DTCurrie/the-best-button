@@ -1,0 +1,25 @@
+{
+    "extends": "../tsconfig.base",
+    "compilerOptions": {
+        "target": "es5",
+        "outDir": "dist",
+        "baseUrl": "src",
+        "removeComments": true,
+        "allowSyntheticDefaultImports": true,
+        "jsx": "react",
+        "plugins": [{
+            "name": "typescript-tslint-plugin",
+            "alwaysShowRuleFailuresAsWarnings": false,
+            "ignoreDefinitionFiles": true,
+            "configFile": "../tslint.json",
+            "suppressWhileTypeErrorsPresent": false,
+            "mockTypeScriptVersion": false
+        }]
+    },
+    "include": [
+        "src/**/*"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}

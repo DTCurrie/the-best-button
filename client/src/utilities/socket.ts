@@ -1,6 +1,5 @@
 import SocketIOClient from 'socket.io-client';
-
-import { url } from './api';
+import { url } from '@utilities/api';
 
 const socket: SocketIOClient.Socket = SocketIOClient(url);
 

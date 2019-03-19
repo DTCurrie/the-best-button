@@ -1,0 +1,15 @@
+@mixin block {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+@mixin center-block {
+    @include block;
+    text-align: center;
+}
+
+@mixin center-bold {
+    font-weight: bold;
+    text-align: center;
+}

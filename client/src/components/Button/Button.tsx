@@ -1,10 +1,10 @@
 import React, { ReactElement } from 'react';
 
-import { emit } from '../../socket';
+import { emit } from '../../utilities/socket';
 
 import './Button.scss';
 
-interface ButtonProps { color: string; active: boolean; disabled: boolean; onVote(colorId: string): void; }
+interface ButtonProps { color: string; active: boolean; disabled: boolean; onVote(colorId: string): void; onError(error: string): void; }
 
 export function Button(props: ButtonProps): ReactElement {
     const url = `${process.env.NODE_ENV === 'production'
@@ -16,10 +16,12 @@ export function Button(props: ButtonProps): ReactElement {
             .then((response: Response) => response.json()
                 .then((data: { success: boolean }) => {
                     if (data.success) { emit<string>('vote', props.color, () => props.onVote(props.color)); }
-                }));
+                })
+                .catch((error: string) => props.onError(error)))
+            .catch((error: string) => props.onError(error));
     };
 
-    const classes = `button-${props.color} mdc-button ${props.active ? 'mdc-button--raised' : 'mdc-button--outlined'}`;
+    const classes = `button button-${props.color} mdc-button ${props.active ? 'mdc-button--raised' : 'mdc-button--outlined'}`;
 
     return (
         <button className={classes} onClick={vote} disabled={props.disabled}>

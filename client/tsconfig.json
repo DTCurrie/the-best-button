@@ -1,11 +1,11 @@
 {
-    "extends": "../tsconfig.base",
+    "extends": "../tsconfig",
     "compilerOptions": {
         "target": "es5",
         "outDir": "dist",
         "baseUrl": "src",
         "removeComments": true,
-        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
         "jsx": "react",
         "plugins": [{
             "name": "typescript-tslint-plugin",
@@ -14,12 +14,16 @@
             "configFile": "../tslint.json",
             "suppressWhileTypeErrorsPresent": false,
             "mockTypeScriptVersion": false
-        }]
+        }],
+        "paths": {
+            "@charts/*": ["charts/*"],
+            "@components/*": ["components/*"],
+            "@routes/*": ["routes/*"],
+            "@styles/*": ["styles/*"],
+            "@utilities/*": ["utilities/*"]
+        },
+        "types": ["node", "../index"]
     },
-    "include": [
-        "src/**/*"
-    ],
-    "exclude": [
-        "node_modules"
-    ]
+    "include": ["src/**/*"],
+    "exclude": ["node_modules"]
 }

@@ -1,0 +1,27 @@
+@import "@material/theme/color-palette";
+
+$mdc-theme-primary: $material-color-cyan-800;
+$mdc-theme-secondary: $material-color-blue-grey-50;
+$mdc-theme-on-primary: #ffffff;
+$mdc-theme-on-secondary: #000000;
+
+$navigation-height: 60px;
+
+$button-colors: (red: #c62828,
+blue: #1565c0,
+green: #2e7d32,
+yellow: #f9a825);
+
+:export {
+    primary: $mdc-theme-primary;
+    secondary: $mdc-theme-secondary;
+    red: map-get($button-colors, red);
+    red-transparent: rgba(map-get($button-colors, red), 0.6);
+    blue: map-get($button-colors, blue);
+    blue-transparent: rgba(map-get($button-colors, blue), 0.6);
+    green: map-get($button-colors, green);
+    green-transparent: rgba(map-get($button-colors, green), 0.6);
+    yellow: map-get($button-colors, yellow);
+    yellow-transparent: rgba(map-get($button-colors, yellow), 0.6);
+    ;
+}

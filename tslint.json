@@ -81,7 +81,6 @@
         ],
         "no-duplicate-imports": true,
         "no-require-imports": true,
-        "no-default-export": true,
         "no-reference": true,
         "typedef": [
             true,
@@ -232,6 +231,7 @@
             true,
             "check-format",
             "allow-leading-underscore",
+            "allow-pascal-case",
             "ban-keywords"
         ],
         "comment-format": [

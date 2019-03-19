@@ -1,0 +1,22 @@
+@import "@material/theme/variables";
+
+@import "../../styles/mixins";
+
+.vote {
+    .buttons {
+        @include center-block;
+
+        .instructions {
+            @include center-bold;
+        }
+
+        button.button {
+            margin: 8px;
+        }
+    }
+
+    .voted {
+        @include center-block;
+        opacity: mdc-theme-text-emphasis(disabled);
+    }
+}

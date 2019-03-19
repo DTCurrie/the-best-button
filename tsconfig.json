@@ -3,8 +3,8 @@
     "compilerOptions": {
         "module": "commonjs",
         "moduleResolution": "node",
-        "esModuleInterop": true,
         "noImplicitAny": true,
-        "sourceMap": true
+        "sourceMap": true,
+        "allowSyntheticDefaultImports": true
     }
 }

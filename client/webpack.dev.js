@@ -33,6 +33,18 @@ module.exports = merge(common, {
     },
     module: {
         rules: [{
+            test: /\.css$/,
+            use: [
+                "style-loader",
+                {
+                    loader: "css-loader",
+                    options: {
+                        importLoaders: 2
+                    }
+                },
+                "postcss-loader"
+            ]
+        }, {
             test: /\.scss$/,
             use: [
                 "style-loader",
@@ -52,5 +64,8 @@ module.exports = merge(common, {
                 }
             ]
         }]
-    }
+    },
+    devServer: {
+        historyApiFallback: true,
+    },
 });

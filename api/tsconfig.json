@@ -1,15 +1,21 @@
 {
-    "extends": "../tsconfig.base",
+    "extends": "../tsconfig",
     "compilerOptions": {
         "target": "es6",
-        "outDir": "dist/",
-        "baseUrl": "src/",
+        "outDir": "dist",
+        "baseUrl": "src",
         "allowJs": false,
+        "plugins": [{
+            "name": "typescript-tslint-plugin",
+            "alwaysShowRuleFailuresAsWarnings": false,
+            "ignoreDefinitionFiles": true,
+            "configFile": "../tslint.json",
+            "suppressWhileTypeErrorsPresent": false,
+            "mockTypeScriptVersion": false
+        }],
+        "types": ["node", "../index"]
     },
     "include": [
         "src/**/*"
-    ],
-    "exclude": [
-        "node_modules"
     ]
 }

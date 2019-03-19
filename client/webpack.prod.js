@@ -16,7 +16,7 @@ module.exports = merge(common, {
             cacheGroups: {
                 commons: {
                     name: 'commons',
-                    chunks: 'initial',
+                    chunks: 'all',
                     minChunks: 2
                 }
             }
@@ -28,6 +28,7 @@ module.exports = merge(common, {
         mangleWasmImports: true,
         flagIncludedChunks: true,
         occurrenceOrder: true,
+        providedExports: true,
         usedExports: true,
         concatenateModules: true,
         sideEffects: true,
@@ -35,6 +36,18 @@ module.exports = merge(common, {
     },
     module: {
         rules: [{
+            test: /\.css$/,
+            use: [
+                MiniCssExtractPlugin.loader,
+                {
+                    loader: "css-loader",
+                    options: {
+                        importLoaders: 2
+                    }
+                },
+                "postcss-loader"
+            ]
+        }, {
             test: /\.scss$/,
             use: [
                 MiniCssExtractPlugin.loader,
@@ -58,7 +71,7 @@ module.exports = merge(common, {
     plugins: [
         new MiniCssExtractPlugin({
             filename: "[name].[contenthash].css",
-            chunkFilename: "[id].css"
+            chunkFilename: "[id].[contenthash].css"
         }),
         new CompressionPlugin({
             filename: "[path].gz[query]",

@@ -1,12 +1,14 @@
-import express, { Express } from 'express';
-import cookieParser from 'cookie-parser';
-import logger from 'morgan';
+import * as express from 'express';
+import * as cookieParser from 'cookie-parser';
+import * as logger from 'morgan';
 
 import { colors } from './controllers/colors';
 import { weeks } from './controllers/weeks';
 import { wins } from './controllers/wins';
 
-export const app: Express = express();
+export const app: express.Express = express();
+
+app.set('trust proxy', true);
 
 app.use(logger('dev'));
 app.use(express.json());
